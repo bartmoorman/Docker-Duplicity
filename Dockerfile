@@ -1,4 +1,4 @@
-FROM alpine:latest
+FROM bmoorman/alpine:latest
 
 RUN apk add --no-cache \
     duplicity \
