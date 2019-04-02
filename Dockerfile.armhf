@@ -1,4 +1,4 @@
-FROM --platform=armhf bmoorman/alpine:armhf-3.8
+FROM bmoorman/alpine:armhf-3.8
 
 RUN apk add --no-cache \
     duplicity \
