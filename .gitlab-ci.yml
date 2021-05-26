@@ -22,7 +22,5 @@ default:
 build:
   stage: build
   script:
-    - docker build --pull --tag ${DOCKER_HUB_IMAGE} --tag ${GITLAB_IMAGE} .
-    - docker push ${DOCKER_HUB_IMAGE}
-    - docker push ${GITLAB_IMAGE}
-    - docker image rm ${DOCKER_HUB_IMAGE} ${GITLAB_IMAGE}
+    - docker buildx create --use
+    - docker buildx build --pull --push --platform linux/amd64,linux/arm/v7 --tag ${DOCKER_HUB_IMAGE} --tag ${GITLAB_IMAGE} .
