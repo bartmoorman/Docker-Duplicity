@@ -13,6 +13,7 @@ after_script:
 build:
   stage: build
   tags:
+    - amd64
     - multiarch
   script:
     - mkdir -p ~/.docker/cli-plugins
